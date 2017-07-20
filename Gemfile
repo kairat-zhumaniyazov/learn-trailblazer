@@ -37,6 +37,9 @@ gem 'slim'
 gem 'trailblazer'
 gem 'trailblazer-loader'
 gem 'trailblazer-rails'
+gem 'trailblazer-cells'
+gem 'cells-slim'
+gem 'cells-rails'
 gem 'simple_form'
 
 group :development, :test do
