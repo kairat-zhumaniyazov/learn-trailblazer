@@ -8,6 +8,7 @@ feature 'Index of things' do
     visit '/'
 
     expect(page).to have_selector('.columns .header a', text: first_thing.name)
+    expect(page).to_not have_selector('.columns.end .header a', text: first_thing.name)
     expect(page).to have_selector('.columns.end .header a', text: second_thing.name)
   end
 end
