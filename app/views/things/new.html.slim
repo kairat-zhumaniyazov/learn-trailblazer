@@ -1,0 +1,12 @@
+= simple_form_for @form.model do |f|
+  - if @form.errors.any?
+    .errors
+      - @form.errors.each do |key, val|
+        p= "#{key} #{val}"
+
+  = f.input :name
+  = f.input :description
+  
+  = f.submit
+  
+= @form.errors.messages

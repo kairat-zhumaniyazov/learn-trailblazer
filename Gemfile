@@ -37,10 +37,9 @@ gem 'slim'
 gem 'trailblazer'
 gem 'trailblazer-loader'
 gem 'trailblazer-rails'
+gem 'simple_form'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
@@ -48,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
   gem 'spring-commands-rspec'
+  gem 'pry-rails'
 end
 
 group :development do
