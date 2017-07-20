@@ -1,0 +1,10 @@
+- if @form.errors.any?
+  .errors
+    - @form.errors.each do |key, val|
+      p= "#{key} #{val}"
+        
+= simple_form_for @form.model do |f|
+  = f.input :name, readonly: @form.readonly?(:name), as: :string
+  = f.input :description
+  
+  = f.submit

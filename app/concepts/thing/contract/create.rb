@@ -1,5 +1,7 @@
 module Thing::Contract
   class Create < Reform::Form
+    include Reform::Form::ActiveModel::ModelReflections
+
     property :name
     property :description
 

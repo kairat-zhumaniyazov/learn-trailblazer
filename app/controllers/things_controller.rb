@@ -3,24 +3,27 @@ class ThingsController < ApplicationController
   end
 
   def create
-    # run Thing::Create do |op|
-    #   return redirect_to op.model
-    # end
-    #
-    # render action: :new
-
     run Thing::Create do |result|
-      return redirect_to thing_path(result['model'].id)
+      return redirect_to result['model']
     end
     render :new
   end
 
   def new
-    # @form = Thing::Contract::Create.new(Thing.new)
     run Thing::Create::Present
   end
 
   def show
-    #code
+  end
+
+  def edit
+    run Thing::Update::Present
+  end
+
+  def update
+    run Thing::Update do |result|
+      return redirect_to result['model']
+    end
+    render :new
   end
 end
