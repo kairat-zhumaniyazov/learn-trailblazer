@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'slim'
+gem 'trailblazer'
+gem 'trailblazer-loader'
 gem 'trailblazer-rails'
 
 group :development, :test do
@@ -45,6 +47,7 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
+  gem 'spring-commands-rspec'
 end
 
 group :development do

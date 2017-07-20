@@ -186,6 +186,8 @@ GEM
       tilt (>= 1.3.3, < 2.1)
     spring (2.0.2)
       activesupport (>= 4.2)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -250,7 +252,10 @@ DEPENDENCIES
   selenium-webdriver
   slim
   spring
+  spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
+  trailblazer
+  trailblazer-loader
   trailblazer-rails
   turbolinks (~> 5)
   tzinfo-data
