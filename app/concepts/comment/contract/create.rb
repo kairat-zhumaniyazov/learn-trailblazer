@@ -10,9 +10,8 @@ module Comment::Contract
     validates :weight, inclusion: { in: [0, 1] }
     validates :thing, :user, presence: true
 
-    property :user do
+    property :user, prepopulator: ->(*) { self.user = User.new } do
       property :email
-      validates :email, presence: true
     end
   end
 end

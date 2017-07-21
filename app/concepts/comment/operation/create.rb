@@ -1,18 +1,17 @@
 class Comment::Create < Trailblazer::Operation
-  step Model(Comment, :create)
-  step :assign_thing!
-  step :assign_current_user!
-  step Contract::Build( constant: Comment::Contract::Create )
+  class Present < Trailblazer::Operation
+    step Model(Comment, :new)
+    step :assign_thing!
+    step Contract::Build( constant: Comment::Contract::Create )
+
+    private
+
+    def assign_thing!(options, params:, **)
+      options['model'].thing = Thing.find_by_id(params[:thing_id])
+    end
+  end
+
+  step Nested(Present)
   step Contract::Validate( key: :comment )
   step Contract::Persist()
-
-  private
-
-  def assign_thing!(options)
-    options['model'].thing = Thing.find_by_id(options[:thing_id])
-  end
-
-  def assign_current_user!(options)
-    options['model'].user = User.find_by_id(options[:user_id])
-  end
 end
