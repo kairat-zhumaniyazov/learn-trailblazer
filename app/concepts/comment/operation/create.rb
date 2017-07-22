@@ -8,6 +8,7 @@ class Comment::Create < Trailblazer::Operation
 
     def assign_thing!(options, params:, **)
       options['model'].thing = Thing.find_by_id(params[:thing_id])
+      options['model'].build_user
     end
   end
 

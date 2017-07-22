@@ -9,6 +9,5 @@ class CommentsController < ApplicationController
 
   def new
     run Comment::Create::Present
-    @form.prepopulate! # dont work without it!!!
   end
 end
