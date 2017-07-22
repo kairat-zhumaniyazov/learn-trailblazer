@@ -11,7 +11,7 @@ module Comment::Contract
     end
 
     property :body
-    property :weight, prepopulator: ->(*) { self.weight = 0 }
+    property :weight, prepopulator: ->(*) { self.weight = '0' }
     property :thing
 
     validates :body, length: { in: 6..160 }
