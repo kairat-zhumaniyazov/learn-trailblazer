@@ -1,0 +1,8 @@
+= simple_form_for [@form.thing, @form] do |f|
+  = f.input :body
+  = f.collection_radio_buttons :weight, *@form.weights
+
+  = f.simple_fields_for :user do |u|
+    = u.input :email
+
+  = f.button :submit
