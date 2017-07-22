@@ -1,6 +1,6 @@
 class Comment::Create < Trailblazer::Operation
   class Present < Trailblazer::Operation
-    step Model(Comment, :new)
+    step Model(Comment, :create)
     step :assign_thing!
     step Contract::Build( constant: Comment::Contract::Create )
 
